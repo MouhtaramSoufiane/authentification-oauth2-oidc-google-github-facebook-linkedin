@@ -1,0 +1,47 @@
+<!DOCTYPE html >
+<html lang="en" xmlns:th="http://www.thymleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymleaf/layout"
+      layout:decorate="template"
+>
+<head>
+    <meta charset="UTF-8">
+    <title>Customers</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/5.3.2/css/bootstrap.min.css">
+    <script href="/webjars/bootstrap/5.3.2/js/bootstrap.bundle.js"></script>
+</head>
+<body>
+
+<div layout:fragment="content">
+    <div class="ps-3 pt-2">
+        <div class="container">
+            <div class="card">
+                <div class="card-header">
+                    <h2>List of Customers</h2>
+                </div>
+                <div class="card-body">
+                    <table class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="c:${customers}">
+                            <td th:text="${c.id}"></td>
+                            <td th:text="${c.name}"></td>
+                            <td th:text="${c.email}"></td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

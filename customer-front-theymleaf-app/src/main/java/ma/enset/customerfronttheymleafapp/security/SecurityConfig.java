@@ -31,11 +31,11 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception{
         return http
-//                .csrf(Customizer.withDefaults())
+                .csrf(Customizer.withDefaults())
                 .authorizeHttpRequests(ar->ar.requestMatchers("/h2-console/**","/","/notAuthorized/**","/oauth2Login/**","/webjars/**").permitAll())
                 .headers(hd->hd.frameOptions(fo->fo.disable()))
                 .csrf(cs->cs.ignoringRequestMatchers("/h2-console/**").disable())
-                .oauth2Login(al->al.loginPage("/oauth2Login").defaultSuccessUrl("/"))
+                .oauth2Login(al->al.loginPage("/oauth2Login").defaultSuccessUrl("/",true))
                 .logout(logout-> logout.logoutSuccessUrl("/").permitAll()
                         .logoutSuccessHandler(oidcLogoutSuccessHandler())
                         .deleteCookies("JSESSIONID"))

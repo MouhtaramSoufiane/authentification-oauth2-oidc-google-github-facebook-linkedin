@@ -37,11 +37,18 @@ public class CustomerController {
     }
 
     @GetMapping("/customers")
-    @PreAuthorize("hasAuthority('ADMIN')")
+//    @PreAuthorize("hasAuthority('ADMIN')")
     public String customers(Model model){
         List<Customer> customerList = customerRepository.findAll();
         model.addAttribute("customers",customerList);
         return "customers";
+    }
+
+    @GetMapping("/user/customers")
+    @ResponseBody
+    @PreAuthorize("hasAuthority('USER')")
+    public List<Customer> getCustomers(){
+        return customerRepository.findAll();
     }
 
     @GetMapping("/products")

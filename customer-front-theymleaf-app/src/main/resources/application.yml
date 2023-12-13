@@ -1,0 +1,20 @@
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          linkedin:
+            clientId: 78e4perhssz9mg
+            clientSecret: XW6Ww4AuLG8FbFjs
+            clientAuthenticationMethod: client_secret_post
+            authorizationGrantType: authorization_code
+            redirectUri: "{baseUrl}/login/oauth2/code/{registrationId}"
+            scope: openid, email, profile
+            clientName: Linkedin
+        provider:
+          linkedin:
+            tokenUri: https://www.linkedin.com/oauth/v2/accessToken
+            authorizationUri: https://www.linkedin.com/oauth/v2/authorization
+            userInfoUri: https://api.linkedin.com/v2/me
+            userNameAttribute: id
+

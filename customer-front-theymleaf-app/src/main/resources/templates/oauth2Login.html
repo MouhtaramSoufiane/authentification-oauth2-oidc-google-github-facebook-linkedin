@@ -22,9 +22,13 @@
                               <button th:if="${url.key=='Google'}"  class="btn btn-lg btn-block btn-primary mb-2" style="background-color: #dd4b39;width: 300px;"
                                       type="submit"><i class="fab fa-google me-2"></i> <a th:href="${url.value}"  style="text-decoration-line: none;color: white">Sign in with google </a></button>
                               <button th:if="${url.key=='keycloak'}" th:href="${url.value}" class="btn btn-lg btn-block btn-primary mb-2" style="background-color: #aab0c2;width: 300px;"
-                                      type="submit"><img src="http://localhost:8080/resources/169vn/admin/keycloak.v2/favicon.svg" height="25px" width="25px" type="icon" alt="keycloak"> <a th:href="${url.value}" style="text-decoration-line: none;color: white">Sign in with keycloak</a></button>
+                                      type="submit"><img src="http://localhost:8080/resources/gtiy3/admin/keycloak.v2/favicon.svg" height="25px" width="25px" type="icon" alt="keycloak"> <a th:href="${url.value}" style="text-decoration-line: none;color: white">Sign in with keycloak</a></button>
                               <button th:if="${url.key=='GitHub'}" th:href="${url.value}" class="btn btn-lg btn-block btn-primary mb-2" style="background-color: #484747;width: 300px;"
                                       type="submit"><i class="fab fa-github me-2"></i><a th:href="${url.value}" style="text-decoration-line: none;color: white">Sign in with GitHub</a></button>
+                              <button th:if="${url.key=='Facebook'}" th:href="${url.value}" class="btn btn-lg btn-block btn-primary mb-2" style="background-color: #587efa;width: 300px;"
+                                      type="submit"><i class="fab fa-facebook me-2"></i><a th:href="${url.value}" style="text-decoration-line: none;color: white">Sign in with Facebook</a></button>
+                              <button th:if="${url.key=='Linkedin'}" th:href="${url.value}" class="btn btn-lg btn-block btn-primary mb-2" style="background-color: #1a347e;width: 300px;"
+                                      type="submit"><i class="fab fa-linkedin me-2"></i><a th:href="${url.value}" style="text-decoration-line: none;color: white">Sign in with Linkedin</a></button>
                           </div>
                       </div>
                   </div>

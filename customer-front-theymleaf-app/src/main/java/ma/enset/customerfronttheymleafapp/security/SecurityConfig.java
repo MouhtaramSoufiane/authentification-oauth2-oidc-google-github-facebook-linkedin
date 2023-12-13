@@ -32,7 +32,7 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception{
         return http
                 .csrf(Customizer.withDefaults())
-                .authorizeHttpRequests(ar->ar.requestMatchers("/h2-console/**","/","/notAuthorized/**","/oauth2Login/**","/webjars/**").permitAll())
+                .authorizeHttpRequests(ar->ar.requestMatchers("/h2-console/**","*linkedin*","/","/auth/**","/notAuthorized/**","/oauth2Login/**","/webjars/**").permitAll())
                 .headers(hd->hd.frameOptions(fo->fo.disable()))
                 .csrf(cs->cs.ignoringRequestMatchers("/h2-console/**").disable())
                 .oauth2Login(al->al.loginPage("/oauth2Login").defaultSuccessUrl("/",true))
@@ -40,10 +40,10 @@ public class SecurityConfig {
                         .logoutSuccessHandler(oidcLogoutSuccessHandler())
                         .deleteCookies("JSESSIONID"))
                 .exceptionHandling(exh->exh.accessDeniedPage("/notAuthorized"))
-
                 .authorizeHttpRequests(ar-> ar.anyRequest().authenticated())
                 .build();
     }
+
 
     private OidcClientInitiatedLogoutSuccessHandler oidcLogoutSuccessHandler() {
         final OidcClientInitiatedLogoutSuccessHandler oidcLogoutSuccessHandler =

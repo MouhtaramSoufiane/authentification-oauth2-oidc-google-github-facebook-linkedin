@@ -1,5 +1,6 @@
 # Archeticture de Application
-![image](https://github.com/MouhtaramSoufiane/secured-application-angular-using-oauth2-oidc-keycloak-google-github/assets/104082651/93639d14-84b1-4df8-ab74-39523af875a3)
+![image](https://github.com/MouhtaramSoufiane/authentification-oauth2-oidc-google-github-facebook-linkedin/assets/104082651/8a559693-b435-4bcc-8fa8-5b85e6f61192)
+
 
 ## Page de Login
 ![image](https://github.com/MouhtaramSoufiane/authentification-oauth2-oidc-google-github-facebook-linkedin/assets/104082651/faf72ce4-ee3c-450a-8e68-f5e8e66ecedd)
